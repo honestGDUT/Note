@@ -12,10 +12,10 @@
     install：安装空间（Install Space）
 
 一个最小的项目结构如图所示：
-![alt text](image.png)
+![alt text](./image/image.png)
 
 后两个路径由 catkin 系统自动生成、管理，我们日常的开发一般不会去涉及，而主要用到的是src文件夹，我们写的 ROS 程序、网上下载的 ROS 源代码包都存放在这里。 在编译时，catkin 编译系统会递归的查找和编译 src/ 下的每一个源代码包。因此你也可以把几个源代码包放到同一个文件夹下，如下图所示：
-![alt text](image-1.png)
+![alt text](./image/image-1.png)
 
 
 ## 若没有创建工作空间，则需要先创建一个工作空间
@@ -58,7 +58,7 @@ ROS中的package不仅是Linux上的软件包，
 1. 创建功能包
     ```bash
     cd ~/catkin_ws/src
-    catkin_create_pkg test1 rospy roscpp
+    catkin_create_pkg test1 rospy roscpp std_msgs
     cd ~/catkin_ws
     catkin_make
     source devel/setup.bash #如果之前在.bashrc中配置了可不用这一步
@@ -68,7 +68,7 @@ catkin_create_pkg指令第一个参数test1是创建的功能包文件夹名称�
 
 ## ros功能包的目录结构
 一个功能包的目录结构如下，CmakeLists.txt和package.xml是必须的，分别定义编译规则和描述信息。</b>
-其他类似src、include、scripts这些目录命名都是约定俗成的，并未明确定义，但是ros默认会去这些目录下找相关文件，所以为了标准化，请规范命名![alt text](image-2.png)
+其他类似src、include、scripts这些目录命名都是约定俗成的，并未明确定义，但是ros默认会去这些目录下找相关文件，所以为了标准化，请规范命名![alt text](./image/image-2.png)
 更加详细的描述如下:
 
     CMakeLists.txt: 定义package的包名、依赖、源文件、目标文件等编译规则，是package
